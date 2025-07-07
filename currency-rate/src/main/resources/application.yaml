@@ -1,0 +1,6 @@
+server:
+    port: 8082
+
+current:
+  rate:
+    url: "https://www.cbr.ru/scripts/XML_daily.asp"
