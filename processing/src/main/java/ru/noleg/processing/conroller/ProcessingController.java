@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.noleg.processing.dto.AccountDto;
 import ru.noleg.processing.dto.CreateAccountDto;
 import ru.noleg.processing.dto.ExchangeMoneyDto;
 import ru.noleg.processing.dto.PutAccountMoneyDto;
@@ -37,8 +38,8 @@ public class ProcessingController {
     }
 
     @PostMapping("/accounts")
-    public ResponseEntity<CreateAccountDto> createAccount(@RequestBody CreateAccountDto createAccountDto) {
-        Account account = accountMapper.mapToEntity(createAccountDto);
+    public ResponseEntity<AccountDto> createAccount(@RequestBody CreateAccountDto createAccountDto) {
+        Account account = accountMapper.mapToCreateEntity(createAccountDto);
         Account createdAccount = accountService.createAccount(account);
 
         return ResponseEntity
@@ -47,7 +48,7 @@ public class ProcessingController {
     }
 
     @GetMapping("/accounts/{accountId}")
-    public ResponseEntity<CreateAccountDto> getAccount(@PathVariable Long accountId) {
+    public ResponseEntity<AccountDto> getAccount(@PathVariable Long accountId) {
         Account account = accountService.getAccount(accountId);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -55,7 +56,7 @@ public class ProcessingController {
     }
 
     @GetMapping("/accounts/users/{userId}")
-    public ResponseEntity<List<CreateAccountDto>> getAccountsByUserId(@PathVariable Long userId) {
+    public ResponseEntity<List<AccountDto>> getAccountsByUserId(@PathVariable Long userId) {
         List<Account> accounts = accountService.getAccountsByUserId(userId);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -63,7 +64,7 @@ public class ProcessingController {
     }
 
     @PutMapping("/accounts/{accountId}/money")
-    public ResponseEntity<CreateAccountDto> addMoneyToAccount(
+    public ResponseEntity<AccountDto> addMoneyToAccount(
             @PathVariable Long accountId,
             @RequestBody PutAccountMoneyDto putAccountMoneyDto
     ) {

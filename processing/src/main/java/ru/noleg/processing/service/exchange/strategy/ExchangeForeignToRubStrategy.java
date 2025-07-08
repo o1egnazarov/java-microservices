@@ -31,7 +31,6 @@ public class ExchangeForeignToRubStrategy implements CurrencyExchangeStrategy {
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public BigDecimal exchange(UUID uuid, Account source, Account target, BigDecimal amount) {
         BigDecimal rate = currencyService.fetchCurrencyRate(source.getCurrencyCode());
-//        BigDecimal multiplier = BigDecimal.ONE.divide(rate, 4, RoundingMode.HALF_DOWN);
 
         accountService.addMoneyToAccount(uuid, source.getId(), amount.negate());
         BigDecimal result = amount.multiply(rate);

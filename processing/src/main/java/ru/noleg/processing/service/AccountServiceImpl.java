@@ -67,6 +67,4 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> getAccountsByUserId(Long userId) {
         return accountRepository.findAllByUserId(userId);
     }
-
-
 }
