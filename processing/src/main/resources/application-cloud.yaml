@@ -1,0 +1,7 @@
+eureka:
+  client:
+    enabled: true
+
+currency:
+  service:
+    url: http://currency-rate-service/cbr

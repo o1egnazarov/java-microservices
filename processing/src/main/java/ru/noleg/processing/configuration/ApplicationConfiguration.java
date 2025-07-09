@@ -7,6 +7,8 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ApplicationConfiguration {
     @Bean
+//  TODO хз как сделать чтобы разные профили использовали эту аннотацию или не использовали
+//  @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

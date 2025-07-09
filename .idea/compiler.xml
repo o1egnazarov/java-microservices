@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cbr-microservices" />
+        <module name="discovery-service" />
         <module name="currency-rate" />
       </profile>
       <profile name="Annotation profile for processing" enabled="true">
@@ -24,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="currency-rate" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
       <module name="processing" options="-parameters" />
     </option>
   </component>
