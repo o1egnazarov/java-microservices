@@ -1,0 +1,40 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.3)
+
+2025-07-10T01:46:04.521+06:00  INFO 20898 --- [gateway-service] [           main] r.n.g.GatewayServiceApplication          : Starting GatewayServiceApplication v0.0.1-SNAPSHOT using Java 17.0.15 with PID 20898 (/mnt/c/Users/nazar/IdeaProjects/cbr-microservices/gateway-service/target/gateway-service-0.0.1-SNAPSHOT.jar started by oleg_sandr in /mnt/c/Users/nazar/IdeaProjects/cbr-microservices/gateway-service)
+2025-07-10T01:46:04.539+06:00  INFO 20898 --- [gateway-service] [           main] r.n.g.GatewayServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-07-10T01:46:09.441+06:00  INFO 20898 --- [gateway-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2713d986-62ab-3f3e-8cac-6e3cc6c49874
+2025-07-10T01:46:12.799+06:00  INFO 20898 --- [gateway-service] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-10T01:46:13.345+06:00 DEBUG 20898 --- [gateway-service] [           main] o.s.c.gateway.config.GatewayProperties   : Routes supplied from Gateway Properties: [RouteDefinition{id='currency-rate-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/cbr/**}}], filters=[], uri=http://localhost:8082, order=0, metadata={}, enabled=true}, RouteDefinition{id='processing-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/processing/**}}], filters=[], uri=http://localhost:8081, order=0, metadata={}, enabled=true}]
+2025-07-10T01:46:14.190+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-07-10T01:46:14.192+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-07-10T01:46:14.193+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-07-10T01:46:14.194+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-07-10T01:46:14.195+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-07-10T01:46:14.196+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-07-10T01:46:14.197+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-07-10T01:46:14.198+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-07-10T01:46:14.199+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-07-10T01:46:14.200+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-07-10T01:46:14.201+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-07-10T01:46:14.202+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-07-10T01:46:14.203+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-07-10T01:46:14.204+06:00  INFO 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-07-10T01:46:15.356+06:00  INFO 20898 --- [gateway-service] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-07-10T01:46:16.383+06:00  INFO 20898 --- [gateway-service] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-10T01:46:16.519+06:00  WARN 20898 --- [gateway-service] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-10T01:46:17.126+06:00  INFO 20898 --- [gateway-service] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2025-07-10T01:46:18.138+06:00  INFO 20898 --- [gateway-service] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-10T01:46:19.146+06:00  INFO 20898 --- [gateway-service] [           main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-10T01:46:19.248+06:00 DEBUG 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition currency-rate-service applying {_genkey_0=/cbr/**} to Path
+2025-07-10T01:46:19.341+06:00 DEBUG 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: currency-rate-service
+2025-07-10T01:46:19.342+06:00 DEBUG 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition processing-service applying {_genkey_0=/processing/**} to Path
+2025-07-10T01:46:19.347+06:00 DEBUG 20898 --- [gateway-service] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : RouteDefinition matched: processing-service
+2025-07-10T01:46:19.381+06:00  INFO 20898 --- [gateway-service] [           main] r.n.g.GatewayServiceApplication          : Started GatewayServiceApplication in 18.809 seconds (process running for 21.552)

@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/currency-rate/pom.xml" />
         <option value="$PROJECT_DIR$/processing/pom.xml" />
         <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/auth-service/pom.xml" />
       </list>
     </option>
   </component>

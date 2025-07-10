@@ -1,6 +1,9 @@
 server:
     port: 8082
 
+cloud:
+  eureka-host: localhost
+
 spring:
   application:
     name: currency-rate-service
@@ -13,4 +16,4 @@ eureka:
   client:
     enabled: false
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${cloud.eureka-host}:8761/eureka

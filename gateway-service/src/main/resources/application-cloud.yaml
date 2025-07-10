@@ -1,0 +1,7 @@
+cloud:
+  processing-service-url: lb://processing-service
+  currency-rate-service-url: lb://currency-rate-service
+
+eureka:
+  client:
+    enabled: true
