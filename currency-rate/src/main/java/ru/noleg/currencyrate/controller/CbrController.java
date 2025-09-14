@@ -21,7 +21,7 @@ public class CbrController {
     }
 
     @GetMapping(value = "/currency", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<BigDecimal> fetchCurrencyRates(@RequestParam String code) {
+    public ResponseEntity<BigDecimal> fetchCurrencyRates(@RequestParam("code") String code) {
         var result = this.cbrService.requestByCurrencyCode(code);
         return ResponseEntity.ok(result);
     }

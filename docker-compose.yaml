@@ -16,7 +16,53 @@ services:
       timeout: 5s
       retries: 10
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - processing_postgres_data:/var/lib/postgresql/data
+
+  auth-db:
+    container_name: auth-service-postgres-db
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: auth_db
+      POSTGRES_USER: noleg
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5431:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "psql -U noleg -d auth_db -c 'SELECT 1'" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - auth_postgres_data:/var/lib/postgresql/data
+
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:21.1.1
+    platform: linux/arm64
+    restart: unless-stopped
+    command: start-dev
+    environment:
+      KC_DB: postgres
+#      KC_DB_URL_HOST: auth_db
+      KC_DB_URL: jdbc:postgresql://auth-db:5432/auth_db
+      KC_DB_USERNAME: noleg
+      KC_DB_PASSWORD: root
+      KC_DB_SCHEMA: public
+      KEYCLOAK_ADMIN: KEYCLOAK_USER
+      KEYCLOAK_ADMIN_PASSWORD: KEYCLOAK_PASSWORD
+    ports:
+      - "8100:8080"
+    depends_on:
+      auth-db:
+        condition: service_healthy
+
+  ldap:
+    image: rroemhild/test-openldap
+    ports:
+      - "10389:10389"
+      - "10636:10636"
 
 volumes:
-  postgres_data:
+  processing_postgres_data:
+  auth_postgres_data:

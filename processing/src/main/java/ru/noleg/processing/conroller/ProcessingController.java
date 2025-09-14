@@ -48,7 +48,7 @@ public class ProcessingController {
     }
 
     @GetMapping("/accounts/{accountId}")
-    public ResponseEntity<AccountDto> getAccount(@PathVariable Long accountId) {
+    public ResponseEntity<AccountDto> getAccount(@PathVariable("accountId") Long accountId) {
         Account account = accountService.getAccount(accountId);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -56,7 +56,7 @@ public class ProcessingController {
     }
 
     @GetMapping("/accounts/users/{userId}")
-    public ResponseEntity<List<AccountDto>> getAccountsByUserId(@PathVariable Long userId) {
+    public ResponseEntity<List<AccountDto>> getAccountsByUserId(@PathVariable("userId") Long userId) {
         List<Account> accounts = accountService.getAccountsByUserId(userId);
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -65,7 +65,7 @@ public class ProcessingController {
 
     @PutMapping("/accounts/{accountId}/money")
     public ResponseEntity<AccountDto> addMoneyToAccount(
-            @PathVariable Long accountId,
+            @PathVariable("accountId") Long accountId,
             @RequestBody PutAccountMoneyDto putAccountMoneyDto
     ) {
         Account account = accountService.addMoneyToAccount(
@@ -81,7 +81,7 @@ public class ProcessingController {
 
     @PostMapping("/exchanges/{uuid}")
     public ResponseEntity<BigDecimal> exchangeMoney(
-            @PathVariable UUID uuid,
+            @PathVariable("uuid") UUID uuid,
             @RequestBody ExchangeMoneyDto exchangeMoneyDto
     ) {
         BigDecimal result = exchangeService.convert(
